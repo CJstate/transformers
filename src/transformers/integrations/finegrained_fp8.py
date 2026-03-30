@@ -460,7 +460,7 @@ def _pad_for_contiguous_layout(
     return a_padded, sf_padded
 
 
-def _unpad_from_contiguous_layout(x: torch.Tensor, row_map: torch.Tensor) -> torch.Tensor:
+def _unpad_from_contiguous_layout(hidden_states: torch.Tensor, row_map: torch.Tensor) -> torch.Tensor:
     """Gather real rows back from the padded contiguous layout."""
     return x[row_map]
 
