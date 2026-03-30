@@ -450,7 +450,7 @@ def _build_contiguous_layout(expert_ids_sorted: torch.Tensor, num_experts: int, 
 
 
 def _pad_for_contiguous_layout(
-    x: torch.Tensor, scales: torch.Tensor, row_map: torch.Tensor, total_rows: int
+    hidden_states: torch.Tensor, scales: torch.Tensor, row_map: torch.Tensor, total_rows: int
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """Scatter FP8 activations and scales into the padded contiguous layout."""
     a_padded = torch.zeros(total_rows, x.shape[1], device=x.device, dtype=x.dtype)
